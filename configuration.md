@@ -5,7 +5,7 @@ overall usability. While the topic is covered in great detail by a pair of Pract
 
 ## Keeping Passwords Private
 
-One of the most common mistakes when sharing code is to embed usernames, passwords, credentials, API keys, and other private information directly in your implementation code. This is a bad idea for a number of reasons, apart from the obvious security issues. Hardcoding credentials also can lead to weird side effects when multiple people are using the same account to test something, and the general brittleness of the approach can make applications harder to maintain.
+One of the most common mistakes when sharing code is to embed usernames, passwords, credentials, API keys, and other private information directly in your implementation code. This is a bad idea for a number of reasons, apart from the obvious security issues. Hardcoding credentials also can lead to weird side effects when multiple people are using the same account to test something, and the general brittleness of the approach can make projects harder to maintain.
 
 If you've checked in credentials in your project, simply deleting this information from your project and introducing a more flexible configuration approach will help put you on the right track. But because we use git for version control, the sensitive information will still be available in early commits if you don't specifically remove those as well. To learn how to rewrite your git history check out [this article](http://help.github.com/remove-sensitive-data/) from Github.
 
