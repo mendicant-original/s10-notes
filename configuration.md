@@ -98,6 +98,7 @@ end
 ```
 
 Providing the example configuration makes it easier for a user to start working with your application. It also helps seperate your environmental settings from your actual configuration. This is all very nice when working with applications, but if we were building a library, we could not reasonably assume that a user will create a `config/environment.rb` file. For this reason, libraries often provide dynamic configuration objects.
+
 ## Configuration Objects
 
 A configuration object is an ordinary Ruby object that is responsible for representing and processing configuration data within your codebase. The `Mail.defaults` call in the previous section hints at one form of configuration object, and the example below tackles the same problem in a slightly different way:
@@ -135,15 +136,13 @@ config.username = "user@example.com"
 MailServer.start(config)
 ```
 
-You could make other modifications to allow the user to perhaps setup the configuration by using the block form of `#start` or perhaps write `Configuration.setup` which initializes a new `Configuration` object and stores it as class instance variable. These are all valid options, but the key take away is to exploit Rubies biggest feature: "Everything's an Object". Use Objects as often as possible, don't be afraid to create new Classes/Objects. This leads us to our final point on configuration, Configuration: CONSTANTS vs. Object.
+Both the `mail` gem configuration system and the imaginary example shown above have something important in common: They both use ordinary object oriented programming techniques to treat configuration data as just another object in the system. This provides users with a great deal of flexibility while keeping things clean and easy to work with.
 
-## Configuration: CONSTANTS vs. Object
+## Environment-variable based configuration
 
-There's no true consensus in the Ruby community as which method of configuration is preferred. However here are some rules to follow.
+Another option for configuring your libraries and applications is the use of environment variables. This approach has the benefit of making it possible to vary configuration data at runtime without the user relying on access to the filesystem to update configuration data, and is commonly used in restricted environments such as Heroku.
 
-  - An internal constant such as an email template, or a pooling length, that is never going to be configured by the user and will not change during testing can be a CONSTANT.
-  - When writing a Gem, do not make your users set CONSTANTS. Instead provide them with configuration objects or block that are well documented.
-  - When writing an application allow for either method, but ensure you provide an example configuration in the `config/` directory that only has the user entering needed information.
+While this approach is not recommended if building a Ruby based configuration system is feasible, it is sometimes the only practical way to configure your application. For more details on this approach, see [Practicing Ruby Issue 1.4](http://blog.rubybestpractices.com/posts/gregory/033-issue-4-configurable.html), particularly the "Using the Shell Environment for Configuration" section.
 
 <hr/>
 
