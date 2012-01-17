@@ -27,6 +27,7 @@ We've compiled a list of the common quality issues seen during the first checkpo
 [Code Structure](https://github.com/mendicant-university/s10-notes/blob/master/code_structure.md)
 ==============
 __TODO__
+
   - Use namespaces
   - No need for empty module definition
   - Try not to put anything outside of requires in "lib/my_library.rb". Often times what we want to put there should really be extracted into it's own object.
@@ -35,6 +36,7 @@ __TODO__
 [Design](https://github.com/mendicant-university/s10-notes/blob/master/design.md)
 ======
 __TODO__
+
   - Don't use a singleton just because there is usually only one of something in your system.
   - Don't use class variables, ever!
   - Prefer modules inheritance to subclass inheritance
@@ -46,4 +48,4 @@ __TODO__
 
 [Contributing to OSS](https://github.com/mendicant-university/s10-notes/blob/master/contributing_to_oss.md)
 ===================
-  - Be Kind, Don't Clobber Their Environment
+  - Be Thoughtful
