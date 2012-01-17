@@ -6,11 +6,10 @@ We've compiled a list of the common quality issues seen during the first checkpo
 ## [Configuration Notes](https://github.com/mendicant-university/s10-notes/blob/master/configuration.md)
 
 
-  - Don't check in passwords
-  - Providing Example Configurations
-  - Configuration Objects
-  - Configuration: CONSTANTS vs. Object
-
+  - Keeping passwords private
+  - Providing example configurations
+  - Configuration objects
+  - Environment-variable based configuration
 
 ## [Style Notes](https://github.com/mendicant-university/s10-notes/blob/master/style.md)
   
