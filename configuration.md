@@ -9,7 +9,7 @@ One of the most common mistakes when sharing code is to embed usernames, passwor
 
 If you've checked in credentials in your project, simply deleting this information from your code and introducing a more flexible configuration approach will help put you on the right track. But because we use git for version control, the sensitive information will still be available in early commits if you don't specifically remove those as well. To learn how to rewrite your git history check out [this article](http://help.github.com/remove-sensitive-data/) from Github.
 
-The reason why folks often check in credentials is that it is often more convenient to hardcode those values in the early stages of a project than it would be to think about configuration problems upfront. However, there are some simple tricks for building configurable applications that make it easy to make them more secure and flexible from the start, and those practices are worth learning.
+The reason why folks often check in credentials is that it seems more convenient to hardcode those values in the early stages of a project than it would be to think about configuration problems upfront. However, there are some simple tricks for building configurable applications that make it easy to make them more secure and flexible from the start, and those practices are worth learning.
 
 ## Providing Example Configurations
 
