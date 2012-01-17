@@ -76,19 +76,19 @@ module MailServer
     Mail.defaults do
       retriever_method(
         :pop3,
-        address:    ENVIRONMENT::POP3_SERVER
-        port:       ENVIRONEMNT::POP3_PORT,
-        user_name:  ENVIRONMENT::USERNAME,
-        password:   ENVIRONMENT::PASSWORD,
+        address:    Environment::POP3_SERVER
+        port:       Environment::POP3_PORT,
+        user_name:  Environment:USERNAME,
+        password:   Environment::PASSWORD,
         enable_ssl: true
       )
       
       delivery_method(
-        address:   ENVIRONMENT::SMTP_SERVER,
-        port:      ENVIRONMENT::SMTP_PORT,
-        domain:    ENVIRONMENT::SMTP_DOMAIN,
-        user_name: ENVIRONMENT::USERNAME,
-        password:  ENVIRONMENT::PASSWORD,
+        address:   Environment::SMTP_SERVER,
+        port:      Environment::SMTP_PORT,
+        domain:    Environment::SMTP_DOMAIN,
+        user_name: Environment::USERNAME,
+        password:  Environment::PASSWORD,
         authentication: true,
         enable_starttls_auto: true
       )
