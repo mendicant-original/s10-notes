@@ -97,7 +97,7 @@ module MailServer
 end
 ```
 
-Providing the example configuration makes it easier for a user to start working with your application. It also helps seperate your environmental settings from your actual configuration. This is all very nice when working with applications, but what if we're writing a library. We have no easy way to ensure that the user creates `config/environment.rb`. We need a new, more dynamic way of configuring our libraries. One such was is a configuration object which we'll discuss in the next section.
+Providing the example configuration makes it easier for a user to start working with your application. It also helps seperate your environmental settings from your actual configuration. This is all very nice when working with applications, but what if we were writing a library? Then we'd have no easy way to ensure that the user creates `config/environment.rb`. We'd need a new, more dynamic way of configuring our libraries. To deal with this problem, we can implement configuration objects instead of simply relying on constants. 
 
 ## Configuration Objects
 
