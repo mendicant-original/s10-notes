@@ -97,8 +97,7 @@ module MailServer
 end
 ```
 
-Providing the example configuration makes it easier for a user to start working with your application. It also helps seperate your environmental settings from your actual configuration. This is all very nice when working with applications, but what if we were writing a library? Then we'd have no easy way to ensure that the user creates `config/environment.rb`. We'd need a new, more dynamic way of configuring our libraries. To deal with this problem, we can implement configuration objects instead of simply relying on constants. 
-
+Providing the example configuration makes it easier for a user to start working with your application. It also helps seperate your environmental settings from your actual configuration. This is all very nice when working with applications, but if we were building a library, we could not reasonably assume that a user will create a `config/environment.rb` file. For this reason, libraries often provide dynamic configuration objects.
 ## Configuration Objects
 
 What's a configuration object? Quite simply put it's an object that holds all our configuration information. What does one look like? Take a look in the previous sample. `Mail.defaults` is a configuration object in which we're setting up the configuration for the `receiver_method` and `delivery_method`. Below is an example of how to change our previous example into a configuration object.
