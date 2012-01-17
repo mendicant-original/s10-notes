@@ -8,8 +8,9 @@ We've compiled a list of the common quality issues seen during the first checkpo
 Configuration
 =============
   - Don't check in passwords!
-  - Provide default config files
-  - Congfiguration Objects vs Configuration Globals
+  - Providing Example Configurations
+  - Configuration Objects
+  - Configuration: CONSTANTS vs. Object
 
 Style
 =====
