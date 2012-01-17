@@ -29,7 +29,6 @@ We've compiled a list of the common quality issues seen during the first checkpo
 
 [Code Structure](https://github.com/mendicant-university/s10-notes/blob/master/code_structure.md)
 ================
-__TODO__
 
   - Use Namespaces
   - Don't Create Empty Modules
