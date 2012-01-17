@@ -100,7 +100,7 @@ end
 Providing the example configuration makes it easier for a user to start working with your application. It also helps seperate your environmental settings from your actual configuration. This is all very nice when working with applications, but if we were building a library, we could not reasonably assume that a user will create a `config/environment.rb` file. For this reason, libraries often provide dynamic configuration objects.
 ## Configuration Objects
 
-What's a configuration object? Quite simply put it's an object that holds all our configuration information. What does one look like? Take a look in the previous sample. `Mail.defaults` is a configuration object in which we're setting up the configuration for the `receiver_method` and `delivery_method`. Below is an example of how to change our previous example into a configuration object.
+What's a configuration object? Quite simply put it's an object that holds all our configuration information. What does one look like? Take a look in the previous sample. `Mail.defaults` is a configuration object in which we're setting up the configuration for the `receiver_method` and `delivery_method`. Below is an example of how to change our previous example into a similar but slightly different kind of configuration object.
 
 ```ruby
 module MailServer
@@ -108,11 +108,15 @@ module MailServer
     attr_accessor :username, :password,
       :pop3_server, :pop3_port,
       :smtp_server, :smtp_port, :smtp_domain
-      
-    def initialize
-      yield self if block_given?
-      
-      # validate all required fields were given
+
+    def valid?
+      # validate configuration data is as expected
+    end
+
+    def errors
+      # after valid? is called, references an array of
+      # errors like ["username is missing", "pop3_server address malformed"]
+      # etc... or return an empty array if configuration is valid
     end
   end
 end
@@ -123,15 +127,15 @@ Now a user of our library can config it like this:
 ```ruby
 require "mail_server"
 
-config = MailServer::Configuration.new do |config|
-           config.username = "user@example.com"
-           # ...
-         end
-         
+config = MailServer::Configuration.new           
+config.username = "user@example.com"
+# ...
+
+# start may call config.valid? and possibly report on config.errors
 MailServer.start(config)
 ```
 
-You could make other modifications to allow the user to perhaps setup the configuration by using the block form of `#start` or perhaps write `Configuration.setup` which initializes a new `Configuration` object and stores it as class instance variable. These are all valid options, but the key take away is to exploit Rubies biggest feature, "Everything's an Object". Use Objects as often as possible, don't be afraid to create new Classes/Objects. This leads us to our final point on configuration, Configuration: CONSTANTS vs. Object.
+You could make other modifications to allow the user to perhaps setup the configuration by using the block form of `#start` or perhaps write `Configuration.setup` which initializes a new `Configuration` object and stores it as class instance variable. These are all valid options, but the key take away is to exploit Rubies biggest feature: "Everything's an Object". Use Objects as often as possible, don't be afraid to create new Classes/Objects. This leads us to our final point on configuration, Configuration: CONSTANTS vs. Object.
 
 ## Configuration: CONSTANTS vs. Object
 
