@@ -12,35 +12,35 @@ We've compiled a list of the common quality issues seen during the first checkpo
   - Configuration Objects
   - Configuration: CONSTANTS vs. Object
 
-Style
+[Style](https://github.com/mendicant-university/s10-notes/blob/master/style.md)
 =====
   - Follow the style guide
   - Don't checkin debugging code or commented code
   - Don't cargo cult style, think why something is done
 
-Project Layout
+[Project Layout](https://github.com/mendicant-university/s10-notes/blob/master/project_layout.md)
 ==============
   - Make sure to include a Gemfile (but have it reference just the gemspec unless there is a reason to do otherwise)
   - Proper project layout what goes under bin, lib, assets (data,config), test, spec, etc
 
-Code Structure
+[Code Structure](https://github.com/mendicant-university/s10-notes/blob/master/code_structure.md)
 ==============
   - Use namespaces
   - No need for empty module definition
   - Try not to put anything outside of requires in "lib/my_library.rb". Often times what we want to put there should really be extracted into it's own object.
   - Don't require using Dir globbing
 
-Design
+[Design](https://github.com/mendicant-university/s10-notes/blob/master/design.md)
 ======
   - Don't use a singleton just because there is usually only one of something in your system.
   - Don't use class variables, ever!
   - Prefer modules inheritance to subclass inheritance
 
-Documentation
+[Documentation](https://github.com/mendicant-university/s10-notes/blob/master/documentation.md)
 =============
   - Provide and example of how to use your library (share with them your latest practice ruby that shows how to build good examples)
   - Replace the instructions README with one describing your project
 
-Contributing to OSS
+[Contributing to OSS](https://github.com/mendicant-university/s10-notes/blob/master/contributing_to_oss.md)
 ===================
   - Don't introduce new testing/environment dependencies within functional commits to someone else's project (or really, they should always be isolated)
