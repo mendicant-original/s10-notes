@@ -78,7 +78,7 @@ module MailServer
         :pop3,
         address:    Environment::POP3_SERVER
         port:       Environment::POP3_PORT,
-        user_name:  Environment:USERNAME,
+        user_name:  Environment::USERNAME,
         password:   Environment::PASSWORD,
         enable_ssl: true
       )
