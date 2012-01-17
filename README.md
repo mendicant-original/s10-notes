@@ -7,16 +7,16 @@ We've compiled a list of the common quality issues seen during the first checkpo
 
 [Configuration](https://github.com/mendicant-university/s10-notes/blob/master/configuration.md)
 =============
-  - Don't check in passwords!
+  - Don't check in passwords
   - Providing Example Configurations
   - Configuration Objects
   - Configuration: CONSTANTS vs. Object
 
 [Style](https://github.com/mendicant-university/s10-notes/blob/master/style.md)
 =====
-  - Follow the style guide
-  - Don't checkin debugging code or commented code
-  - Don't cargo cult style, think why something is done
+  - MU Style Guide
+  - Don't litter
+  - Why Do We Do Things?
 
 [Project Layout](https://github.com/mendicant-university/s10-notes/blob/master/project_layout.md)
 ==============
