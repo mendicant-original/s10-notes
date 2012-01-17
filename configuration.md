@@ -1,9 +1,9 @@
 # Configuration
 
 Making our applications and libraries easy to configure is an important part of
-overall usability. While the topic is covered in great detail by a pair of Practicing Ruby articles ([Issue 1.3](http://blog.rubybestpractices.com/posts/gregory/032-issue-3-configurable.html) and [Issue 1.4](http://blog.rubybestpractices.com/posts/gregory/033-issue-4-configurable.html)), we've included several specific points below that are directly related to the problems we've seen in this session.
+overall usability. While the topic is covered in great detail by a pair of Practicing Ruby articles ([Issue 1.3](http://blog.rubybestpractices.com/posts/gregory/032-issue-3-configurable.html) and [Issue 1.4](http://blog.rubybestpractices.com/posts/gregory/033-issue-4-configurable.html)), there several configuration-specific issues that we've seen in this session that we'd like to address directly.
 
-## Don't Check in Passwords
+## Keeping Passwords Private
 
 One of the most common mistakes when sharing code is to embed our usernames, passwords, credentials, other private information into the code. It's fair to say you shouldn't share this data with the world. You may catch that you've included information like this before releasing it and remove it. But, unless you go back and rewrite your version history it's still there.
 
