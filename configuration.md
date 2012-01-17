@@ -1,5 +1,7 @@
 # Configuration
 
+Making our applications and libraries easy to configure is an important part of
+overall usability. While the topic is covered in great detail by a pair of Practicing Ruby articles ([Issue 1.3](http://blog.rubybestpractices.com/posts/gregory/032-issue-3-configurable.html) and [Issue 1.4](http://blog.rubybestpractices.com/posts/gregory/033-issue-4-configurable.html), we've included several specific points below that are directly related to the problems we've seen in this session.
 
 ## Don't Check in Passwords
 
