@@ -46,7 +46,7 @@ end
 
 Now imagine that each of these classes is defined in it's own file. You'd have to navigate four files to find out everything that List does. Now take a look what happens is we use modules instead.
 
-``ruby
+```ruby
 module Maildo
   module Message
     module SenderAwareMessage
