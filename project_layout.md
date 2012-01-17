@@ -18,3 +18,8 @@ Physical Structure
 ------------------
 
 Steve Klabnik [wrote an article](http://timelessrepo.com/making-ruby-gems) last year that lays down exactly how you should structure any ruby library. Please read this and apply it to your projects. This is widely agreed upon by the community as the standard.
+
+Don't Force Your Environment on Others
+--------------------------------------
+
+Some programmers my use RVM, some may use RBENV. Some may use Gemsets, some may not. Don't force others to use your environment by including your `.rvmrc` or `.rbenv-local` files. Instead, as you do with configuration, add those to `.gitignore` and provide `.rvmrc.example` or `.rbenv-local.example` files. Apply this to any files that may force your environment on others, even things like your `Guardfile`.
