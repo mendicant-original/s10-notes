@@ -37,11 +37,10 @@ We've compiled a list of the common quality issues seen during the first checkpo
 
 [Design](https://github.com/mendicant-university/s10-notes/blob/master/design.md)
 ========
-__TODO__
 
-  - Don't use a singleton just because there is usually only one of something in your system.
-  - Don't use class variables, ever!
-  - Prefer modules inheritance to subclass inheritance
+  - Don't Overuse Singleton's
+  - Never Use Class Variables
+  - Inheritance: Modules vs Subclasses
 
 [Documentation](https://github.com/mendicant-university/s10-notes/blob/master/documentation.md)
 ===============
