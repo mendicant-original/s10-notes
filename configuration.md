@@ -122,7 +122,7 @@ module MailServer
 end
 ```
 
-Now a user of our library can config it like this:
+With a configuration object such as the one above, a user would be able to work with our library in the following way:
 
 ```ruby
 require "mail_server"
