@@ -5,9 +5,11 @@ overall usability. While the topic is covered in great detail by a pair of Pract
 
 ## Keeping Passwords Private
 
-One of the most common mistakes when sharing code is to embed our usernames, passwords, credentials, other private information into the code. It's fair to say you shouldn't share this data with the world. You may catch that you've included information like this before releasing it and remove it. But, unless you go back and rewrite your version history it's still there.
+One of the most common mistakes when sharing code is to embed usernames, passwords, credentials, other private information into the code. 
 
-To learn how to rewrite your Git history check out [this article](http://help.github.com/remove-sensitive-data/) from Github. Of course, what we really should practice not including this information in the first place, but it's so convinent to not type our credentials in each time we run. In the next section we'll take a look at a common solution to this problem, example configurations.
+Simply deleting this information from your project and adopting a more flexible configuration approach is a good start. But because we use git for version control, the sensitive information will still be available in early commits if you don't specifically remove those as well. To learn how to rewrite your git history check out [this article](http://help.github.com/remove-sensitive-data/) from Github.
+
+The reason why folks often check in credentials is that it is often more convenient to hardcode those values in the early stages of a project than it would be to think about configuration problems upfront. However, there are some simple tricks for building configurable applications that make it easy to make them more secure and flexible from the start, and those practices are worth learning.
 
 ## Providing Example Configurations
 
