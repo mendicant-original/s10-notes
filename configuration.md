@@ -109,8 +109,8 @@ module MailServer
       :pop3_server, :pop3_port,
       :smtp_server, :smtp_port, :smtp_domain
       
-    def initialize(&block)
-      instance_eval &block if block_given?
+    def initialize
+      yield self if block_given?
       
       # validate all required fields were given
     end
@@ -123,8 +123,8 @@ Now a user of our library can config it like this:
 ```ruby
 require "mail_server"
 
-config = MailServer::Configuration.new do
-           username = "user@example.com"
+config = MailServer::Configuration.new do |config|
+           config.username = "user@example.com"
            # ...
          end
          
