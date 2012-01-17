@@ -42,6 +42,6 @@ We've compiled a list of the common quality issues seen during the first checkpo
   - Replace the README
   - Provide Good Examples
 
-## [Contributing to OSS](https://github.com/mendicant-university/s10-notes/blob/master/contributing_to_oss.md)
+## [FOSS Contribution Notes](https://github.com/mendicant-university/s10-notes/blob/master/contributing_to_oss.md)
 
   - Be Thoughtful
