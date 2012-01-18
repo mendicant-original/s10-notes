@@ -3,7 +3,7 @@
 Making our applications and libraries easy to configure is an important part of
 overall usability. While the topic is covered in great detail by a pair of Practicing Ruby articles ([Issue 1.3](http://blog.rubybestpractices.com/posts/gregory/032-issue-3-configurable.html) and [Issue 1.4](http://blog.rubybestpractices.com/posts/gregory/033-issue-4-configurable.html)), there several configuration-specific issues that we've seen in this session that we'd like to address directly.
 
-## Keeping passwords private
+## Keeping sensitive information private
 
 One of the most common mistakes when sharing code is to embed usernames, passwords, credentials, API keys, and other private information directly in your implementation code. This is a bad idea for a number of reasons, apart from the obvious security issues. Hardcoding credentials also can lead to weird side effects when multiple people are using the same account to test something, and the general brittleness of the approach can make projects harder to maintain.
 
@@ -11,7 +11,7 @@ If you've checked in credentials in your project, simply deleting this informati
 
 The reason why folks often check in credentials is that it seems more convenient to hardcode those values in the early stages of a project than it would be to think about configuration problems upfront. However, there are some simple tricks for building configurable applications that make it easy to make them more secure and flexible from the start, and those practices are worth learning.
 
-## Providing example configurations
+## Providing example configurations 
 
 Let's start of with an example configuration file from s10-int. For this exercise we need to configure a mail server. We're most likely going to need a handful of variables describing our email account, polling time, and how to send/receive messages. Our configuration file currently resides in `lib/mail_server/configuration.rb` and looks something like this.
 
@@ -99,7 +99,7 @@ end
 
 Providing the example configuration makes it easier for a user to start working with your application. It also helps seperate your environmental settings from your actual configuration. This is all very nice when working with applications, but if we were building a library, we could not reasonably assume that a user will create a `config/environment.rb` file. For this reason, libraries often provide dynamic configuration objects.
 
-## Configuration objects
+## Building configuration objects
 
 A configuration object is an ordinary Ruby object that is responsible for representing and processing configuration data within your codebase. The `Mail.defaults` call in the previous section hints at one form of configuration object, and the example below tackles the same problem in a slightly different way:
 
@@ -138,7 +138,7 @@ MailServer.start(config)
 
 Both the `mail` gem configuration system and the imaginary example shown above have something important in common: They both use ordinary object oriented programming techniques to treat configuration data as just another object in the system. This provides users with a great deal of flexibility while keeping things clean and easy to work with.
 
-## Environment-variable based configuration
+## Using shell environment variables
 
 Another option for configuring your libraries and applications is the use of environment variables. This approach has the benefit of making it possible to vary configuration data at runtime without the user relying on access to the filesystem to update configuration data, and is commonly used in restricted environments such as Heroku.
 

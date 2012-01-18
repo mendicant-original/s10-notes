@@ -2,11 +2,10 @@ We've compiled a list of the common quality issues encountered during the sessio
 
 ## [Configuration Notes](https://github.com/mendicant-university/s10-notes/blob/master/configuration.md)
 
-
-  - Keeping passwords private
+  - Keeping sensitive information private
   - Providing example configurations
-  - Configuration objects
-  - Environment-variable based configuration
+  - Building configuration objects
+  - Using shell environment variables
 
 ## [Style Notes](https://github.com/mendicant-university/s10-notes/blob/master/style.md)
   
