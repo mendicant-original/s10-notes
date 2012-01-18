@@ -27,15 +27,15 @@ We've compiled a list of the common quality issues encountered during the sessio
 
 ## [Design Notes](https://github.com/mendicant-university/s10-notes/blob/master/design.md)
 
-  - Don't Overuse Singleton's
-  - Never Use Class Variables
-  - Inheritance: Modules vs Subclasses
+  - Avoiding excess global state 
+  - Avoiding class variables
+  - Using modules effectively
 
 ## [Documentation Notes](https://github.com/mendicant-university/s10-notes/blob/master/documentation.md)
 
-  - Replace the README
-  - Provide Good Examples
+  - Writing a good README
+  - Constructing great examples
 
 ## [FOSS Contribution Notes](https://github.com/mendicant-university/s10-notes/blob/master/contributing_to_oss.md)
 
-  - Be Thoughtful
+  - Being thoughtful

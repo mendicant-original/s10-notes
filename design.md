@@ -1,8 +1,6 @@
-Design
-======
+# Design
 
-Don't Overuse Singleton's
--------------------------
+## Avoiding excess global state
 
 I'm seeing a lot of over usage of the Singleton pattern. There's two problems with this. First is Ruby doesn't really have a good way to properly create Singleton's. Greg has written [a Practicing Ruby article](http://practicingruby.com/articles/shared/zmrfnxqpahmf) that discusses this topic in length. The second problem is that often we're reaching for a singleton because an object should only be created once not because it can only be created once.
 
@@ -12,13 +10,11 @@ A singleton is a lot like a global object. It's created once upon first access a
 
 Another potential issue with singletons come during testing. You cannot test with different initial parameters for your singleton. Once you instantiate it in your first test, it will be the same for all other tests. This will lead you to either attempt to monkey patch your singleton as needed, or perform other tricks to ensure your tests are covering all possible inputs. Jumping through hoops in your tests is a design smell. Simplify your code.
 
-Never Use Class Variables
--------------------------
+## Avoiding class variables
 
 `@@my_variable` this extra `@` throws a whole heap of gotcha's and problems at you. Greg wrote [an article](http://www.oreillynet.com/ruby/blog/2007/01/nubygems_dont_use_class_variab_1.html) on this over five years ago. Please read it an educate other's on why class variables are so bad.
 
-Inheritance: Modules vs Subclasses
-----------------------------------
+## Using modules effectively
 
 Bottom line, modules give us immensely more flexibility than subclasses when it comes to inheritance. Take for example this code:
 
