@@ -4,10 +4,11 @@ Similar to how project structure matters for making your code play nice with oth
 
 ## Namespacing your code
 
-Debugging name collisions can be very difficult. If your library defines everything on the root namespace have two potential name collisions paths. You could overwrite top level namespace Classes, Methods, etc. that you rely on, or you someone requiring your library in their code could have their code overwritten by you. To avoid this problem we wrap our code in a namespace via a Module. As shown below, we simply take the name of our library (`MailServer` in this case) and use it as the namespace.
+Debugging name collisions can be very frustrating and confusing. Because the top-level namespace is a shared space that your code needs to share with all its dependencies as well as Ruby itself, it is best to be as frugal as possible about what top-level constants you define. Typically, the best approach is to wrap your entire project within a single uniquely-named module, to keep it as isolated as possible from the rest of the runtime system.
+
+That means if we were creating a gem called mail_server which implemented a `Queue` class, we would not simply define the class as shown below:
 
 ```ruby
-# Don't do this
 class Queue
   # ...
 end
@@ -15,8 +16,11 @@ end
 def run
   # ...
 end
+```
 
-# Do this instead
+Instead, we would wrap the `Queue` class (and all other classes our gem provided) in a `MailServer` module, as shown below:
+
+```ruby
 module MailServer
   class Queue
     # ...
