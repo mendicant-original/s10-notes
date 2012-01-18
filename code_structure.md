@@ -1,4 +1,4 @@
-# Code Structure
+# Code Structure Notes
 
 Similar to how project structure matters for making your code play nice with other people's environments, your code structure also is an important part of being a good Ruby citizen. The tips below will help prevent weird things from happening when people are working on your project.
 
