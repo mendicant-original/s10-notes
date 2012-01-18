@@ -4,17 +4,17 @@ Figuring out the right design for your code is highly context dependent and can 
 
 ## Avoiding excess global state
 
-I'm seeing a lot of over usage of the Singleton pattern. There's two problems with this. First is Ruby doesn't really have a good way to properly create Singleton's. Greg has written [a Practicing Ruby article](http://practicingruby.com/articles/shared/zmrfnxqpahmf) that discusses this topic in length. The second problem is that often we're reaching for a singleton because an object should only be created once not because it can only be created once.
+While most folks know to avoid global variables, they tend to treat singleton objects as somehow being different things entirely. However, since the entire purpose of a singleton object is to be a singular and global representation of an object in your system, it is pretty much the object-oriented equivalent of storing a value in a global variable.
 
-Often times I'll see a configuration object being created as a singleton. Why? Is there a problem if someone creates multiple configuration objects? Take the example of our mail server. Perhaps they want to spawn multiple servers up to listen to different incoming queues. If we limit our configuration object to a singleton this can no longer be the case.
+Using the singleton pattern has become commonplace for things like configuration objects, but we can probably build systems which are just as easy to use without them, and not sacrifice testability or maintainability along the way. Systems which do not rely on singletons also are naturally more capable of handling situations in which you want to have many of something that you originally thought you may need only one of. For example, in an object-relational mapper, using a singleton to manage the database connection information will limit the ORM to working with a single database at a time, but allowing configuration objects to be passed in instead makes it possible to instantiate multiple connection objects with different configuration details. With that in mind, it's not hard to see that similar scenarios apply to our mail server exercise in fairly natural ways.
 
-A singleton is a lot like a global object. It's created once upon first access and then passed back to whomever requests it. I try and void global state. So, I will often pass around my config object, logger object, etc. Instead of relying on a global singleton.
+There is an example of building a server which accepts an ordinary instance of a configuration object in the [Configuration Notes](https://github.com/mendicant-university/s10-notes/blob/master/configuration.md) we've provided, and that may provide a good starting point for how to remove singletons from your system wherever they're not clearly providing a major advantage. On top of that, we recommend reading [this Practicing Ruby article](http://practicingruby.com/articles/shared/zmrfnxqpahmf) which explains how awkward it is to implement singleton objects in Ruby in the first place.
 
-Another potential issue with singletons come during testing. You cannot test with different initial parameters for your singleton. Once you instantiate it in your first test, it will be the same for all other tests. This will lead you to either attempt to monkey patch your singleton as needed, or perform other tricks to ensure your tests are covering all possible inputs. Jumping through hoops in your tests is a design smell. Simplify your code.
+This is one area in which what has become the convention might not be as good an idea as we once thought it was, and so we'd like to encourage you to use this course to experiment with more flexible designs that do not depend on singleton objects. We can discuss the tradeoffs as we go, since there are bound to be some.
 
 ## Avoiding class variables
 
-`@@my_variable` this extra `@` throws a whole heap of gotcha's and problems at you. Greg wrote [an article](http://www.oreillynet.com/ruby/blog/2007/01/nubygems_dont_use_class_variab_1.html) on this over five years ago. Please read it an educate other's on why class variables are so bad.
+While it's hard to say that any language construct is universally evil (even `eval` with strings has its uses!), the closest thing to being a universally bad idea in Ruby is to use class variables. Please read [Gregory's article from 2007](http://www.oreillynet.com/ruby/blog/2007/01/nubygems_dont_use_class_variab_1.html) on this issue, and let us know if you have any questions about it or aren't convinced by it.
 
 ## Using modules effectively
 
