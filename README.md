@@ -15,9 +15,9 @@ We've compiled a list of the common quality issues encountered during the sessio
 
 ## [Project Layout Notes](https://github.com/mendicant-university/s10-notes/blob/master/project_layout.md)
 
-  - The Gemfile
-  - Project Structure
-  - Don't Force Your Environment on Others
+  - Using Bundler
+  - Organizing your files
+  - Managing your environment
 
 ## [Code Structure Notes](https://github.com/mendicant-university/s10-notes/blob/master/code_structure.md)
 
