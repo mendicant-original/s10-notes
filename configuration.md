@@ -13,7 +13,7 @@ The reason why folks often check in credentials is that it seems more convenient
 
 ## Providing example configurations 
 
-Let's start of with an example configuration file from s10-int. For this exercise we need to configure a mail server. We're most likely going to need a handful of variables describing our email account, polling time, and how to send/receive messages. Our configuration file currently resides in `lib/mail_server/configuration.rb` and looks something like this.
+Let's start off with an example configuration file from s10-int. For this exercise we need to configure a mail server. We're most likely going to need a handful of variables describing our email account, polling time, and how to send/receive messages. Our configuration file currently resides in `lib/mail_server/configuration.rb` and looks something like this.
 
 ```ruby
 module MailServer
