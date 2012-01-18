@@ -58,3 +58,9 @@ end
 While it may seem convenient to use `Dir.glob` or other means of dynamically loading your Ruby files, this makes it much harder to reason about the order in which the files in your project get loaded. Because the amount of time we spend creating files is trivial compared to the time we spend working on the code within them, adding an extra require line whenever a new file is created takes a negligible amount of effort. The tradeoffs of using dynamic file loading are simply not worth the cost of the ambiguity they introduce, except in rare cases where the exact files to be loaded cannot be known at runtime.
 
 A general note related to this is that while dynamic techniques are powerful, they are much more complicated to reason about than their explicit counterparts. Ruby's strength lies in its ability to be as dynamic as we want it to be, but we need to constantly be aware of the tradeoffs involved in the decisions we make about whether to do something a slightly tedious but predictable way vs. a clever but complicated way.
+
+<hr/>
+
+[Go back to the
+README](https://github.com/mendicant-university/s10-notes/blob/master/README.md)
+for an outline of our notes across all topics.
