@@ -2,7 +2,7 @@
 
 Throughout the life of Mendicant University, we have been compiling a [Style Guide](https://github.com/mendicant-university/wiki/wiki/Style-Guide) to help others get aquainted with the standard coding style in the greater Ruby community. This guide was made with two goals in mind: To show students what clean Ruby code looks like, and to make it easier for others reading your code (other students, methods and instructors) to evaluate it. By using a standard style we can more easily communicate with one another through our code.
 
-Please take the time to carefully read the style guide and apply its recommendations to your projects. The bulk of what you'll need to know about basic style points are covered there, but a few key ideas are common across all of the different conventions we've come to accept.
+Please take the time to carefully read the style guide and apply its recommendations to your projects. In addition to the points in that guide, there are a few more things listed below that we thought were worth sharing with this session.
 
 ## Keeping things tidy
 
