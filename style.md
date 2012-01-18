@@ -79,3 +79,9 @@ end # MyClass
 ```
 
 While these kinds of mistakes are often born out of good intentions (making things easier to understand / remember), it is usually the case that if you're writing code in a non-conventional way, there is a better way to solve the problem that's causing you to break from standard practices. This course is a great opportunity to discuss those sorts of points, so don't be afraid to ask about anything that comes to mind!
+
+<hr/>
+
+[Go back to the
+README](https://github.com/mendicant-university/s10-notes/blob/master/README.md)
+for an outline of our notes across all topics.
