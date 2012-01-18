@@ -21,10 +21,9 @@ We've compiled a list of the common quality issues encountered during the sessio
 
 ## [Code Structure Notes](https://github.com/mendicant-university/s10-notes/blob/master/code_structure.md)
 
-  - Use Namespaces
-  - Don't Create Empty Modules
-  - Your Root `lib/` File
-  - Don't `require` with Dir.glob
+  - Namespacing your code
+  - Avoiding empty module definitions
+  - Avoiding dynamic code loading 
 
 ## [Design Notes](https://github.com/mendicant-university/s10-notes/blob/master/design.md)
 
