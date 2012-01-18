@@ -1,5 +1,7 @@
 # Project Layout Notes
 
+Without a specific effort to make your project designed for packaging and re-use, lots of small things that may seem innocuous will end up biting your users and contributors. We've provided a few tips here based on problems we've seen in the submissions so far in this session to help make your projects easier for others to work with.
+
 ## Using Bundler
 
 Introducing a `Gemfile` into your project can make it easier for contributors to install your projects dependencies and also makes it easier for them to test out any executables your project ships with. Whenever your project depends on any gems (both at runtime and in development), it makes sense to build a minimal Gemfile which reads the dependencies directly from your gemspec. This makes it possible for Bundler users to work with your project in a way that is familiar to them without requiring the use of Bundler for those who'd rather not install it.
