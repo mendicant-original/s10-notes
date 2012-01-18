@@ -14,7 +14,7 @@ gemspec
 
 Assuming you have an ordinary gemspec in your project, this will make it possible to use Bundler to install your dependencies via `bundle install`, and to execute your project's scripts via `bundle exec`. This really helps us when we're reviewing your projects, as it makes it so we don't need to spend too much effort setting up your project in order to evaluate it.
 
-While Bundler has significant advantages for development, you should not depend on Bundler at all at runtime (i.e. don't require 'bundler/setup' or reference the `Bundler` constant anywhere) unless you are specifically using Bundler due to git-based gem dependencies or have problems with gem conflicts that can't easily be resolved by ordinary gem locking. Introducing Bundler at runtime results in a lot of additional complexity and an extra dependency for end users, so steps should be taken to avoid this when possible.
+While Bundler has significant advantages for development, you should not depend on Bundler at all at runtime (i.e. don't `require 'bundler/setup'` or reference the `Bundler` constant anywhere) unless you are specifically using Bundler due to git-based gem dependencies or have problems with gem conflicts that can't easily be resolved by ordinary gem locking. Introducing Bundler at runtime results in a lot of additional complexity and an extra dependency for end users, so steps should be taken to avoid this when possible.
 
 
 ## Organizing your files
