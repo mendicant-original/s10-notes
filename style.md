@@ -1,6 +1,6 @@
 ## Style
 
-Throughout the life of Mendicant University, we have been compiling a [Style Guide](https://github.com/mendicant-university/wiki/wiki/Style-Guide) to help others get aquainted with the standard coding style in the greater Ruby community. This guide was made with two goals in mind: To show students what clean Ruby code looks like, and to make it easier for others reading your code (other students, methods and instructors) to evaluate it. By using a standard style we can more easily communicate with one another though our code.
+Throughout the life of Mendicant University, we have been compiling a [Style Guide](https://github.com/mendicant-university/wiki/wiki/Style-Guide) to help others get aquainted with the standard coding style in the greater Ruby community. This guide was made with two goals in mind: To show students what clean Ruby code looks like, and to make it easier for others reading your code (other students, methods and instructors) to evaluate it. By using a standard style we can more easily communicate with one another through our code.
 
 Please take the time to careful read the style guide and apply those ideas to your projects. In addition to the points it lists, a few other general bits of advice are worth highlighting:
 
