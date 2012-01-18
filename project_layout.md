@@ -24,3 +24,9 @@ The general directory layout of Ruby libraries and applications has been fairly 
 ## Managing your environment
 
 Tools like RVM and RBENV make life a whole lot easier when it comes to managing your Ruby environment. However, if you check in your `.rvmrc` file or `.rbenv-local` files, you may end up forcing a contributor/reviewer to either use your preferred way of configuring things or jump through hoops to override your configuration file in their own environment. An alternative approach is to treat these files the same you would any other configuration file: add them to your .gitignore and provide an example configuration file. It makes sense to get in the habit of doing this for anything that might affect the user's environment, including things like your `Guardfile` if you're using [guard](https://github.com/guard/guard).
+
+<hr/>
+
+[Go back to the
+README](https://github.com/mendicant-university/s10-notes/blob/master/README.md)
+for an outline of our notes across all topics.
