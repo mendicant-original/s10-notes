@@ -9,9 +9,9 @@ We've compiled a list of the common quality issues encountered during the sessio
 
 ## [Style Notes](https://github.com/mendicant-university/s10-notes/blob/master/style.md)
   
-  - MU Style Guide
-  - Don't litter
-  - Why Do We Do Things?
+  - Studying the MU style guide
+  - Keeping things tidy
+  - Understanding why we do things 
 
 ## [Project Layout Notes](https://github.com/mendicant-university/s10-notes/blob/master/project_layout.md)
 

@@ -1,37 +1,27 @@
-Style
-=====
-
-MU Style Guide
---------------
+## Style
 
 Throughout the life of Mendicant University, we have been compiling a [Style Guide](https://github.com/mendicant-university/wiki/wiki/Style-Guide) to help others get aquainted with the standard coding style in the greater Ruby community. As with all matters of style, there are going to be disgreements. This guide was made with two goals. To show students what clean Ruby code looks like, and to make it easier for others reading your code (other students, methods and instructrs) to evaluate it. By using a standard style we can more easily communicate with one another though our code.
 
-Please take the time to careful read the Style Guide and apply the style to your project. This is a very important part of having a quality exercise.
+Please take the time to careful read the style guide and apply those ideas to your projects. In addition to the points it lists, a few other general bits of advice are worth highlighting:
 
-Don't litter
-------------
+### Keeping things tidy
 
-Reading code that is strewn with debugging code or unused commented code is akin walking through a litter covered park. The park may be beautiful, but all this litter is just distracting. Your debugging code is just that, debugging code. If your working on debugging a problem, you shouldn't be checking anything in until you've uncovered the problem and fixed it. Version control allows us to go back into history to rescue any old code we may have accidentally deleted.
+Reading code that is strewn with debugging code or unused commented code is akin walking through a litter covered park. The park may be beautiful, but the mess gets in the way of appreciating its charms. Because we use revision control, it is possible to both recover old code from previous commits when we need it, and also conduct experiments or extensive debugging sessions on branches that can be cleaned up before they get merged back into your master branch. By keeping your master branch clean, it will be possible for others to review it and work with it at any point in time. 
 
-Please, be a good programmer and treat your code as a garden. Pull the weeds and compost them.
+## Understanding why we do things
 
-Why Do We Do Things?
---------------------
+Even though style is to some extent about aesthetics, most coding conventions have at least some substantial reason for existing. A solid reason for doing something a certain way is a sign that it might be a good idiom. Conversely, unidiomatic coding style typically does not have a clear justification, but instead often boils down to a couple common faulty arguments.
 
-We often see strange bits of style. When asked why, the programmer usually has one of two answers.
+### I saw Programmer X do it (Argument based on authority)
 
-  1. I saw Programmer X do it.
-  2. It helps me remember Y.
+Often this is cargo culting. We see someone we work with or out in the community that we admire do something and we assume they must be doing it for a reason, so we copy them. A few years ago Aaron Patterson, when asked why he doesn't use parens in method definitions he said, "the parser skips a step, so it's faster". What he admitted recently was he was just trolling the community. He just liked the way it looked, there was no performance difference. 
 
-I'll address these each individually and give an example.
+The lesson here is that it's important to know why you're doing something the way you are. If someone else is doing something you want to copy, investigate why and test their claims yourself. You can also discuss those claims with others to get a deeper understanding of the tradeoffs involved. Code reviews are an excellent opportunity to get this sort of feedback, so don't hesitate to ask us if any of our own standards are unclear or sound like bad ideas to you.
 
-### I saw Programmer X do it
 
-Often this is cargo culting. We see someone we work with or out in the community that we admire do something and we assume they must be doing it for a reason, so we copy them. A few years ago Aaron Patterson, when asked why he doesn't use parens in method definitions he said, "the parser skips a step, so it's faster". What he admitted recently was he was just trolling the community. He just liked the way it looked, there was no performance difference. Know why you're doing something, and if someone else is doing something you want to copy, investigate why and test their claims yourself.
+### It helps me remember Y. (Argument based on convenience)
 
-### It helps me remember Y.
-
-Recently I saw some code where programmers couldn't remember if they had reached the private section of their instance methods, so instead of doing this:
+The following example is the conventional way of separating public method definitions from private definitions, under normal circumstances.
 
 ```ruby
 class MyClass
@@ -51,7 +41,7 @@ class MyClass
 end
 ```
 
-They'd write their code like this:
+However, occasionally you'll see people writing their code in the manner shown below, because they feel it makes it easier to see which methods are public and which are public:
 
 ```ruby
 class MyClass
@@ -71,9 +61,15 @@ class MyClass
 end
 ```
 
-Anytime we have to write extra code like this we need to step back and ask ourselves, can our tools do this work. I'm a Vim user, and I can think of at least three different ways to know if I'm working with private methods without having to write extra code. I can use "%" to match def/end and jump up the code tree quickly. I can enable code folding so that I only see the method I'm working on and the def's of others. Or I can write create a highlight group that changes the background for private methods. What does this tell you? It tells you that the better we know our tools, the less code we have to write.
+Whenever we end up writing extra code like this for the sake of clarity, we need to step back and ask ourselves, can our tools do this work? For example, Vim users have at least three different ways to know whether they are working with private methods without having to write extra code. In particular, it is possible to: 
 
-I saw a couple other things along these lines this week.
+ * Use "%" to match def/end and jump up the code tree quickly. 
+ * Enable code folding so that method definitions are collapsed by default.
+ * Create a highlight group that changes the background for private methods.
+ 
+Most decent text editors have similar functionality available to them as well. Relying on tools rather than conventions for things like this allows for each developer to customize their own experience rather than dealing with noisy source files that use non-standard conventions.
+
+On a related note, we've also seen some students labeling their `end` statements on occasion. In addition to being something that introduces a potential maintenance headache, this convention is another clear example in which using your tools effectively to traverse your code structure can eliminate the need for these sorts of comments.
 
 ```ruby
 class MyClass
@@ -82,26 +78,4 @@ class MyClass
 end # MyClass
 ```
 
-We shouldn't have to write a comment each time we end a block. Folding or Paren matching will do this for us.
-
-```ruby
-class MyClass
-  def initialize
-    @name = "bob"
-  end
-  
-  def greet
-    puts "hello #{name}"
-  end
-  
-  def change_name(val)
-    name = val
-  end
-  
-  private
-  
-  attr_accessor :name
-end
-```
-
-Here we're making a private `attr_accessor` to give use `#name` and `#name=`. Why? It's our instance variable, let's use it directly `puts "hello #{@name}"`. We're not gaining anything by having an `attr_accessor` and it's not going to save us any keystrokes until we use it 19 times.
+While these kinds of mistakes are often made despite good intentions (making things easier to understand / remember), it is usually the case that if you're writing code in a non-conventional way, there is a better way to solve the problem that's causing you to break from standard practices. This course is a great opportunity to discuss those sorts of points, so don't be afraid to ask about anything that comes to mind!
