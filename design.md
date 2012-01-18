@@ -18,7 +18,7 @@ While it's hard to say that any language construct is universally evil (even `ev
 
 ## Using modules effectively
 
-Bottom line, modules give us immensely more flexibility than subclasses when it comes to inheritance. Take for example this code:
+While class inheritance is the golden hammer in many object oriented programming languages, Ruby's mixin capabilities provide a solid alternative to the traditional inheritance model that apply in a wide range of situations. As an example of their strengths, consider the code below:
 
 ```ruby
 module Maildo
@@ -42,7 +42,7 @@ module Maildo
 end
 ```
 
-Now imagine that each of these classes is defined in it's own file. You'd have to navigate four files to find out everything that List does. Now take a look what happens is we use modules instead.
+If each of these classes are actually building upon one another's functionality, and each child is actually a specialized superset of its parent class, it makes sense to use class inheritance. However, it is likely to be the case in a scenario like this that the classes mentioned are simply a set of independent handlers which should all be run in sequences. If that is the case, it makes sense to flatten the structure by using modules instead of subclassing:
 
 ```ruby
 module Maildo
@@ -68,10 +68,14 @@ module Maildo
 end
 ```
 
-Now looking at `List`, we can see all of the modules it inherits from. This also opens up the opportunity to have classes that don't follow our previous subclass chain. Perhaps we want something to be a `SubscriberAwareMessage` and `TaskAwareMessage`. Using subclassing inheritance this is not possible. But with modules we can mix and match as needed. Using modules like this is one of the largest powers of Ruby and really separates the beginner from the intermediate programmer. Greg wrote an excellent series during his first run of Practicing Ruby on modules. I'd urge you to read them and see how you can write better code. Here are the links.
+In the structure above, all of the modules are independent from one another, but the method resolution order for calls on the `List` object remains similar to our inheritance example. The key difference is that we don't need to place an artificial hierarchy on the relationship between the modules just to get the behavior we want to see in `List`. This is a subtle but important difference: whenever it's as convenient to use modules as it is to subclass, the former should be chosen because it reduces the amount of hard dependencies in the system.
+
+For more than you could possibly ever want to know about uses for modules, see the Practicing Ruby series on the topic. Some of the materials are a bit dated, but for the most part they should give you a good sense of what the possibilities are:
 
 1. [Issue 1.8: Uses for modules (1 of 4)](http://blog.rubybestpractices.com/posts/gregory/037-issue-8-uses-for-modules.html)
 2. [Issue 1.9: Uses for modules (2 of 4)](http://blog.rubybestpractices.com/posts/gregory/038-issue-9-uses-for-modules.html)
 3. [Issue 1.10: Uses for modules (3 of 4)](http://blog.rubybestpractices.com/posts/gregory/040-issue-10-uses-for-modules.html)
 4. [Issue 1.10.5: Addendum to 'Uses for modules, part 3'](http://blog.rubybestpractices.com/posts/gregory/041-issue-10.5-uses-for-modules.html)
 5. [Issue 1.11: Uses for modules (4 of 4)](http://blog.rubybestpractices.com/posts/gregory/043-issue-11-uses-for-modules.html)
+
+During this session, we'd like to encourage you to experiment with modules whenever it makes sense to do so. There is a such thing as module overuse, but if you're not using them often at all, chances are you're missing out on some good opportunities to improve your design. The key thing to remember is that modules are still a form of inheritance: they're just a non-hierarchical, more flexible type of inheritance. Your first question should be whether inheritance is appropriate at all, and then once you've decided that it is, it's worth trying to see if your problem can be modeled using module mixins before resorting to class inheritance.
