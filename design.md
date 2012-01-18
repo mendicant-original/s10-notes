@@ -79,3 +79,9 @@ For more than you could possibly ever want to know about uses for modules, see t
 5. [Issue 1.11: Uses for modules (4 of 4)](http://blog.rubybestpractices.com/posts/gregory/043-issue-11-uses-for-modules.html)
 
 During this session, we'd like to encourage you to experiment with modules whenever it makes sense to do so. There is a such thing as module overuse, but if you're not using them often at all, chances are you're missing out on some good opportunities to improve your design. The key thing to remember is that modules are still a form of inheritance: they're just a non-hierarchical, more flexible type of inheritance. Your first question should be whether inheritance is appropriate at all, and then once you've decided that it is, it's worth trying to see if your problem can be modeled using module mixins before resorting to class inheritance.
+
+<hr/>
+
+[Go back to the
+README](https://github.com/mendicant-university/s10-notes/blob/master/README.md)
+for an outline of our notes across all topics.

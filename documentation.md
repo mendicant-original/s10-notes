@@ -11,3 +11,9 @@ If you haven't already done so, replace the assignment descriptions in your proj
 A recent Practicing Ruby article outlined [several patterns for how to create good examples]((http://practicingruby.com/articles/shared/zbffwcmcltkw)), explaining what their benefits and drawbacks are in various contexts. Because examples are the most direct way that you can express what your code is meant to be used for, and the easiest way for us to evaluate your projects, learning how to craft good ones is a key part of this course.
 
 Having good example writing skills will make a whole lot of things easier for you, including writing code reviews, bug reports, tests, and a wide range of other things that might surprise you. While on the surface this skill seems mostly related to writing good documentation, it will directly improve the way you think about and communicate about code if you practice it enough.
+
+<hr/>
+
+[Go back to the
+README](https://github.com/mendicant-university/s10-notes/blob/master/README.md)
+for an outline of our notes across all topics.
