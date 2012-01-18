@@ -1,4 +1,4 @@
-# Documentation
+# Documentation Notes
 
 While there is a ton that could be said about documentation practices in general, there are two things we care about in this course moreso than anything else:  Well-written README files, and great example sets.
 
