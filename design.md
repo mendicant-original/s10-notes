@@ -42,7 +42,7 @@ module Maildo
 end
 ```
 
-If each of these classes are actually building upon one another's functionality, and each child is actually a specialized superset of its parent class, it makes sense to use class inheritance. However, it is likely to be the case in a scenario like this that the classes mentioned are simply a set of independent handlers which should all be run in sequences. If that is the case, it makes sense to flatten the structure by using modules instead of subclassing:
+If each of these classes are actually building upon one another's functionality, and each child is actually a specialized superset of its parent class, it makes sense to use class inheritance. However, it is likely to be the case in a scenario like this that the classes mentioned are simply a set of independent handlers which should all be run by the `List` object. If that is the case, it makes sense to flatten the structure by using modules instead of subclassing:
 
 ```ruby
 module Maildo
