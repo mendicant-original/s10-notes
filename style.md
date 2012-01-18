@@ -78,4 +78,4 @@ class MyClass
 end # MyClass
 ```
 
-While these kinds of mistakes are often made despite good intentions (making things easier to understand / remember), it is usually the case that if you're writing code in a non-conventional way, there is a better way to solve the problem that's causing you to break from standard practices. This course is a great opportunity to discuss those sorts of points, so don't be afraid to ask about anything that comes to mind!
+While these kinds of mistakes are often born out of good intentions (making things easier to understand / remember), it is usually the case that if you're writing code in a non-conventional way, there is a better way to solve the problem that's causing you to break from standard practices. This course is a great opportunity to discuss those sorts of points, so don't be afraid to ask about anything that comes to mind!
