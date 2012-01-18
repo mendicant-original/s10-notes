@@ -26,7 +26,7 @@ end
 
 ## Avoiding empty module definitions
 
-Often we'll see an empty module defined in the root file of a library. For example, `lib/mail_server.rb` may look like this.
+Some projects try to do the right thing by using namespaces, but end up doing so in a somewhat brittle way. The typical code smell starts in the entry point to the library, where a bare module is defined:
 
 ```ruby
 require_relative "mail_server/queue"
@@ -35,7 +35,7 @@ module MailServer
 end
 ```
 
-This is often done for one of two reasons. Cargo Culting and improper Class/Module definition in your other files. If you don't know why you're doing this, it's Cargo Culting and you should stop. Remember to examine everything you write in your code and make sure it's necessary. Now if you need this because your other code won't work, it's most likely because you've written something like `lib/mail_server/queue.rb` below.
+The reason why people provide these blank module definitions is so that they can facilitate the condensed class definition syntax shown below:
 
 ```ruby
 class MailServer::Queue
@@ -43,7 +43,7 @@ class MailServer::Queue
 end
 ```
 
-Don't do this. The correct way to define your class is shown below. It allows you to remove the empty method definition from your root file. And remove a dependency on the order your code is required.
+However, outside of Rails, this style of class definition is often considered an anti-pattern. It creates an artificial sense of load-order dependencies between classes in a system, making it harder to require bits of functionality individually when needed. To avoid this issue, it's better to explicitly nest your modules, as shown below:
 
 ```ruby
 module MailServer
