@@ -1,6 +1,6 @@
 # Design
 
-Figuring out the right design for your code is highly context dependent and can be tricky to get right for even simple projects. However, there are certain problems that seem to have come up in several submissions in this session which can easily be avoided. We've tried to outline a few of the most common ones here.
+Figuring out the right design for your code is highly context dependent and can be tricky to get right for even simple projects. However, there are certain problems that seem to have come up in several submissions in this session which can easily be avoided. We've tried to outline a few solutions to some of the most common problems here.
 
 ## Avoiding excess global state
 
