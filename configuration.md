@@ -76,7 +76,7 @@ module MailServer
     Mail.defaults do
       retriever_method(
         :pop3,
-        address:    Environment::POP3_SERVER
+        address:    Environment::POP3_SERVER,
         port:       Environment::POP3_PORT,
         user_name:  Environment::USERNAME,
         password:   Environment::PASSWORD,
