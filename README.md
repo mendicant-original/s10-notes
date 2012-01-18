@@ -4,10 +4,6 @@ We've compiled a list of the common quality issues encountered during the sessio
 
   - Keeping sensitive information private
   - Providing example configurations
-<<<<<<< HEAD
-  - Configuration objects
-  - Environment-variable based configuration
-=======
   - Building configuration objects
   - Using shell environment variables
 
@@ -43,4 +39,3 @@ We've compiled a list of the common quality issues encountered during the sessio
 ## [FOSS Contribution Notes](https://github.com/mendicant-university/s10-notes/blob/master/contributing_to_oss.md)
 
   - Being thoughtful
->>>>>>> 82ba0635fe837990dd852f399cc7faa26db75e66
