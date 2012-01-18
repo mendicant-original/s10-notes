@@ -12,10 +12,6 @@ That means if we were creating a gem called mail_server which implemented a `Que
 class Queue
   # ...
 end
-
-def run
-  # ...
-end
 ```
 
 Instead, we would wrap the `Queue` class (and all other classes our gem provided) in a `MailServer` module, as shown below:
@@ -23,10 +19,6 @@ Instead, we would wrap the `Queue` class (and all other classes our gem provided
 ```ruby
 module MailServer
   class Queue
-    # ...
-  end
-
-  def self.run
     # ...
   end
 end
