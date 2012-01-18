@@ -1,5 +1,7 @@
 # Design
 
+Figuring out the right design for your code is highly context dependent and can be tricky to get right for even simple projects. However, there are certain problems that seem to have come up in several submissions in this session which can easily be avoided. We've tried to outline a few of the most common ones here.
+
 ## Avoiding excess global state
 
 I'm seeing a lot of over usage of the Singleton pattern. There's two problems with this. First is Ruby doesn't really have a good way to properly create Singleton's. Greg has written [a Practicing Ruby article](http://practicingruby.com/articles/shared/zmrfnxqpahmf) that discusses this topic in length. The second problem is that often we're reaching for a singleton because an object should only be created once not because it can only be created once.
