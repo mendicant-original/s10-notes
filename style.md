@@ -1,10 +1,10 @@
-## Style
+# Style
 
 Throughout the life of Mendicant University, we have been compiling a [Style Guide](https://github.com/mendicant-university/wiki/wiki/Style-Guide) to help others get aquainted with the standard coding style in the greater Ruby community. This guide was made with two goals in mind: To show students what clean Ruby code looks like, and to make it easier for others reading your code (other students, methods and instructors) to evaluate it. By using a standard style we can more easily communicate with one another through our code.
 
 Please take the time to carefully read the style guide and apply its recommendations to your projects. In addition to the conventions it lists, a few other general bits of advice are worth highlighting:
 
-### Keeping things tidy
+## Keeping things tidy
 
 Reading code that is strewn with debugging code or unused commented code is akin walking through a litter covered park. The park may be beautiful, but the mess gets in the way of appreciating its charms. Because we use revision control, it is possible to both recover old code from previous commits when we need it, and also conduct experiments or extensive debugging sessions on branches that can be cleaned up before they get merged back into your master branch. By keeping your master branch clean, it will be possible for others to review it and work with it at any point in time. 
 
