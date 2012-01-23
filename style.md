@@ -1,12 +1,12 @@
 # Style Notes
 
-Throughout the life of Mendicant University, we have been compiling a [Style Guide](https://github.com/mendicant-university/wiki/wiki/Style-Guide) to help others get aquainted with the standard coding style in the greater Ruby ecosystem. This guide was made with two goals in mind: To show students what clean Ruby code looks like, and to make it easier for others reading your code (other students, methods and instructors) to evaluate it. By using a standard style we can more easily communicate with one another through our code.
+Throughout the life of Mendicant University, we have been compiling a [Style Guide](https://github.com/mendicant-university/wiki/wiki/Style-Guide) to help others get acquainted with the standard coding style in the greater Ruby ecosystem. This guide was made with two goals in mind: To show students what clean Ruby code looks like, and to make it easier for others reading your code (other students, mentors and instructors) to evaluate it. By using a standard style we can more easily communicate with one another through our code.
 
 Please take the time to carefully read the style guide and apply its recommendations to your projects. In addition to the points in that guide, there are a few more things listed below that we thought were worth sharing with this session.
 
 ## Keeping things tidy
 
-Reading code that is strewn with debugging code or unused commented code is akin walking through a litter covered park. The park may be beautiful, but the mess gets in the way of appreciating its charms. Because we use revision control, it is possible to both recover old code from previous commits when we need it, and also conduct experiments or extensive debugging sessions on branches that can be cleaned up before they get merged back into your master branch. By keeping your master branch clean, it will be possible for others to review it and work with it at any point in time. 
+Reading code that is strewn with debugging code or unused commented code is akin to walking through a park covered with litter. The park may be beautiful, but the mess gets in the way of appreciating its charms. Because we use revision control, it is possible to both recover old code from previous commits when we need it, and also to conduct experiments or extensive debugging sessions on branches that can be cleaned up before they get merged back into your master branch. By keeping your master branch clean, it will be possible for others to review it and work with it at any point in time. 
 
 ## Understanding why we do things
 
@@ -14,7 +14,7 @@ Even though style is to some extent about aesthetics, most coding conventions ha
 
 ### I saw Programmer X do it (Argument based on authority)
 
-Often this is cargo culting. We see someone we work with or out in the community that we admire do something and we assume they must be doing it for a reason, so we copy them. A few years ago Aaron Patterson, when asked why he doesn't use parens in method definitions he said, "the parser skips a step, so it's faster". What he admitted recently was he was just trolling the community. He just liked the way it looked, there was no performance difference. 
+Often this is cargo culting. We see someone we work with or out in the community whom we admire do something and we assume they must be doing it for a reason, so we copy them. A few years ago Aaron Patterson, when asked why he doesn't use parens in method definitions he said, "the parser skips a step, so it's faster". What he admitted recently was he was just trolling the community. He just liked the way it looked, there was no performance difference. 
 
 The lesson here is that it's important to know why you're doing something the way you are. If someone else is doing something you want to copy, investigate why and test their claims yourself. You can also discuss those claims with others to get a deeper understanding of the tradeoffs involved. Code reviews are an excellent opportunity to get this sort of feedback, so don't hesitate to ask us if any of our own standards are unclear or sound like bad ideas to you.
 
