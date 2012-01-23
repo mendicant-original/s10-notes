@@ -27,9 +27,11 @@ Tools like RVM and RBENV make life a whole lot easier when it comes to managing 
 
 ## Use `require_relative` whenever possible
 
-`require_relative` dynamically determines the proper relative paths to the referenced files based on the current working directory. This lies in contrast to the `require` method which references files relative to the directory the program is executed from.
+`require_relative` dynamically generates the correct path to a referenced file relative to the working directory. This allows you to simply reference other files relative to the location of the file in which the `require_relative` statement is mentioned. The `require` method works altogether differently in that it searches through the directories listed in the `$LOAD_PATH` array.
 
-Before `require_relative` existed, most people either had to resort to ugly `File.join` hacks, or manipulate the load path in some way to get `require` to work as you would intuitively expect. As a result, many tools including Rake, Rubygems, Rspec, etc. added `lib/` to the load path by default so that these workarounds would not be necessary. Nonetheless, as a rule of thumb, when faced with two options that both accomplish the same thing, you should chose the one that has less potentially harmful side effects. In this case, `require_relative` is the better choice because it provides a clean syntax to do requires within a source tree without polluting the load path.
+Before `require_relative` existed, most people either had to resort to ugly `File.join` hacks, or manipulate the load path in some way to get `require` to work as you would intuitively expect. As a result, many tools including Rake, Rubygems, Rspec, etc. added `lib/` to the load path by default so that these workarounds would not be necessary. Even in these special cases where `require` would work just as well, it's still better to use `require_relative`.
+
+As rule of thumb, when faced with two options that both accomplish the same thing, you should chose the one that has less potentially harmful side effects. In this case, `require_relative` is the better choice because it provides a clean syntax to do requires that are decoupled from the load path.
 
 For more in-depth information on the differences between `require` and `require_relative` and other ways to load code, you should read the Practicing Ruby article [Ways to load code](http://practicingruby.com/articles/shared/tmxmprhfrpwq).
 <hr/>
