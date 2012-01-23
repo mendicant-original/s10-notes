@@ -1,7 +1,6 @@
 # Configuration Notes
 
-Making our applications and libraries easy to configure is an important part of
-overall usability. While the topic is covered in great detail by a pair of Practicing Ruby articles ([Issue 1.3](http://blog.rubybestpractices.com/posts/gregory/032-issue-3-configurable.html) and [Issue 1.4](http://blog.rubybestpractices.com/posts/gregory/033-issue-4-configurable.html)), there several configuration-specific issues that we've seen in this session that we'd like to address directly.
+Making our applications and libraries easy to configure is an important part of overall usability. While this topic is covered in great detail in the following pair of Practicing Ruby articles ([Issue 1.3](http://blog.rubybestpractices.com/posts/gregory/032-issue-3-configurable.html) and [Issue 1.4](http://blog.rubybestpractices.com/posts/gregory/033-issue-4-configurable.html)), there are several configuration-specific issues that we've seen in this session that we'd like to address directly.
 
 ## Keeping sensitive information private
 
@@ -97,7 +96,7 @@ module MailServer
 end
 ```
 
-Providing the example configuration makes it easier for a user to start working with your application. It also helps seperate your environmental settings from your actual configuration. This is all very nice when working with applications, but if we were building a library, we could not reasonably assume that a user will create a `config/environment.rb` file. For this reason, libraries often provide dynamic configuration objects.
+Providing the example configuration makes it easier for a user to start working with your application. It also helps separate your environment settings from your actual configuration. This is all very nice when working with applications, but if we were building a library, we cannot assume that a user will create a `config/environment.rb` file. For this reason, libraries often provide dynamic configuration objects.
 
 ## Building configuration objects
 
