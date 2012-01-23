@@ -25,6 +25,13 @@ The general directory layout of Ruby libraries and applications has been fairly 
 
 Tools like RVM and RBENV make life a whole lot easier when it comes to managing your Ruby environment. However, if you check in your `.rvmrc` file or `.rbenv-local` files, you may end up forcing a contributor/reviewer to either use your preferred way of configuring things or jump through hoops to override your configuration file in their own environment. An alternative approach is to treat these files the same you would any other configuration file: add them to your `.gitignore` and provide an example configuration file. It makes sense to get in the habit of doing this for anything that might affect the user's environment, including things like your `Guardfile` if you're using [guard](https://github.com/guard/guard).
 
+## Use `require_relative` whenever possible
+
+`require_relative` dynamically determines the proper relative paths to the referenced files based on the current working directory. This lies in contrast to the `require` method which references files relative to the directory the program is executed from.
+
+Before `require_relative` existed, most people either had to resort to ugly `File.join` hacks, or manipulate the load path in some way to get `require` to work as you would intuitively expect. As a result, many tools including Rake, Rubygems, Rspec, etc. added `lib/` to the load path by default so that these workarounds would not be necessary. Nonetheless, as a rule of thumb, when faced with two options that both accomplish the same thing, you should chose the one that has less potentially harmful side effects. In this case, `require_relative` is the better choice because it provides a clean syntax to do requires within a source tree without polluting the load path.
+
+For more in-depth information on the differences between `require` and `require_relative` and other ways to load code, you should read the Practicing Ruby article [Ways to load code](http://practicingruby.com/articles/shared/tmxmprhfrpwq).
 <hr/>
 
 [Go back to the
