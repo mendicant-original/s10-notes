@@ -19,7 +19,9 @@ While Bundler has significant advantages for development, you should not depend 
 
 ## Organizing your files
 
-The general directory layout of Ruby libraries and applications has been fairly well agreed upon for several years now. While the Ruby Best Practices book covered this back in 2008, [Steve Klabnik has a more recent article](http://timelessrepo.com/making-ruby-gems) about structuring your files for gem packaging that is somewhat more up to date. Be sure to read his post and apply its recommendations to your projects as best as you can.
+The general directory layout of Ruby libraries and applications has been fairly well agreed upon for several years now. While the Ruby Best Practices book covered this back in 2008, [Steve Klabnik has a more recent article](http://timelessrepo.com/making-ruby-gems) about structuring your files for gem packaging that is somewhat more up to date.
+
+We more-or-less try to follow the [Ruby Packaging Standard](http://chneukirchen.github.com/rps/) here at Mendicant whenever possible. Be sure to check that out for a more formal description on what files go where.
 
 ## Managing your environment
 
