@@ -18,6 +18,7 @@ We've compiled a list of common quality issues encountered during the session an
   - Using Bundler
   - Organizing your files
   - Managing your environment
+  - Use require\_relative whenever possible
 
 ## [Code Structure Notes](https://github.com/mendicant-university/s10-notes/blob/master/code_structure.md)
 
